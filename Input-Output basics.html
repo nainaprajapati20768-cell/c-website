@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Input and Output in C</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Basic Input and Output in C</h1>
+<hr>
+
+<h3>1. Print the message: Today I made my first C Program.</h3>
+<a href="#q1">View Solution</a>
+
+<details id="q1">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Today I made my first C Program.");
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Today I made my first C Program.
+</pre>
+</details>
+<hr>
+
+<h3>2. Read a character from keyboard and display it.</h3>
+<a href="#q2">View Solution</a>
+
+<details id="q2">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &amp;ch);
+
+    printf("Character = %c", ch);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a character: A
+Character = A
+</pre>
+</details>
+<hr>
+
+<h3>3. Read four characters and display each on a separate line.</h3>
+<a href="#q3">View Solution</a>
+
+<details id="q3">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char a, b, c, d;
+
+    printf("Enter four characters: ");
+    scanf(" %c %c %c %c", &amp;a, &amp;b, &amp;c, &amp;d);
+
+    printf("%c\n", a);
+    printf("%c\n", b);
+    printf("%c\n", c);
+    printf("%c\n", d);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter four characters: A B C D
+A
+B
+C
+D
+</pre>
+</details>
+<hr>
+
+<h3>4. Print your name in the center of the first line.</h3>
+<a href="#q4">View Solution</a>
+
+<details id="q4">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("          Your Name");
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+          Your Name
+</pre>
+</details>
+<hr>
+
+<h3>5. Store and print a single quote.</h3>
+<a href="#q5">View Solution</a>
+
+<details id="q5">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch = '\'';
+
+    printf("%c", ch);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+'
+</pre>
+</details>
+<hr>
+
+<h3>6. Print your name five times.</h3>
+<a href="#q6">View Solution</a>
+
+<details id="q6">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int i;
+
+    for(i = 1; i &lt;= 5; i++)
+    {
+        printf("Your Name\n");
+    }
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Your Name
+Your Name
+Your Name
+Your Name
+Your Name
+</pre>
+</details>
+<hr>
+
+<h3>7. Print your name in the center of the first line.</h3>
+<a href="#q7">View Solution</a>
+
+<details id="q7">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("          Your Name");
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+          Your Name
+</pre>
+</details>
+<hr>
+
+<h3>8. Display hello, welcome to C.</h3>
+<a href="#q8">View Solution</a>
+
+<details id="q8">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Hello, Welcome to C");
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Hello, Welcome to C
+</pre>
+</details>
+<hr>
+
+<h3>9. Print your name in the center of the page.</h3>
+<a href="#q9">View Solution</a>
+
+<details id="q9">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("\n\n\n\n\n");
+    printf("          Your Name");
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+
+
+
+
+          Your Name
+</pre>
+</details>
+<hr>
+
+<h3>10. Print a single quote.</h3>
+<a href="#q10">View Solution</a>
+
+<details id="q10">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("\'");
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+'
+</pre>
+</details>
+<hr>
+
+<h3>11. Print your name five times.</h3>
+<a href="#q11">View Solution</a>
+
+<details id="q11">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int i;
+
+    for(i = 1; i &lt;= 5; i++)
+    {
+        printf("Your Name\n");
+    }
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Your Name
+Your Name
+Your Name
+Your Name
+Your Name
+</pre>
+</details>
+<hr>
+
+<h3>12. Display password using asterisks.</h3>
+<a href="#q12">View Solution</a>
+
+<details id="q12">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char password[20];
+    int i;
+
+    printf("Enter password: ");
+    scanf("%19s", password);
+
+    printf("Password: ");
+
+    for(i = 0; password[i] != '\0'; i++)
+    {
+        printf("*");
+    }
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter password: abc123
+Password: ******
+</pre>
+</details>
+<hr>
+
+<h3>13. Read two characters and print their ASCII values.</h3>
+<a href="#q13">View Solution</a>
+
+<details id="q13">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char a, b;
+
+    printf("Enter two characters: ");
+    scanf(" %c %c", &amp;a, &amp;b);
+
+    printf("ASCII value of %c = %d\n", a, a);
+    printf("ASCII value of %c = %d\n", b, b);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter two characters: A B
+ASCII value of A = 65
+ASCII value of B = 66
+</pre>
+</details>
+<hr>
+
+<h3>14. Print ASCII characters from 0 to 127.</h3>
+<a href="#q14">View Solution</a>
+
+<details id="q14">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int i;
+
+    for(i = 0; i &lt;= 127; i++)
+    {
+        printf("%d = %c\n", i, i);
+    }
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+0 =
+1 =
+2 =
+3 =
+...
+65 = A
+66 = B
+67 = C
+...
+127 =
+</pre>
+</details>
+
+<hr>

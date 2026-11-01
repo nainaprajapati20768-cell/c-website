@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decision Making in C</title>
+<head>
+    <title>Decision in C</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<h1>Decision Making Statements in C Programming</h1>
+<hr>
+
+<h3>1. Check Whether a Number is Positive or Negative</h3>
+<a href="#q1">View Solution</a>
+
+<details id="q1">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if(n > 0)
+        printf("Positive Number");
+    else if(n < 0)
+        printf("Negative Number");
+    else
+        printf("Zero");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a number: 10
+Positive Number
+</pre>
+</details>
+
+<hr>
+
+<h3>2. Check Whether a Number is Even or Odd</h3>
+<a href="#q2">View Solution</a>
+
+<details id="q2">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if(n % 2 == 0)
+        printf("Even Number");
+    else
+        printf("Odd Number");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a number: 8
+Even Number
+</pre>
+</details>
+
+<hr>
+
+<h3>3. Find the Greatest of Two Numbers</h3>
+<a href="#q3">View Solution</a>
+
+<details id="q3">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b;
+
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+
+    if(a > b)
+        printf("Greatest = %d", a);
+    else if(b > a)
+        printf("Greatest = %d", b);
+    else
+        printf("Both are Equal");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter two numbers: 20 10
+Greatest = 20
+</pre>
+</details>
+
+<hr>
+
+<h3>4. Find the Greatest of Three Numbers</h3>
+<a href="#q4">View Solution</a>
+
+<details id="q4">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b, c;
+
+    printf("Enter three numbers: ");
+    scanf("%d%d%d", &a, &b, &c);
+
+    if(a >= b && a >= c)
+        printf("Greatest = %d", a);
+    else if(b >= a && b >= c)
+        printf("Greatest = %d", b);
+    else
+        printf("Greatest = %d", c);
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter three numbers: 10 25 15
+Greatest = 25
+</pre>
+</details>
+
+<hr>
+
+<h3>5. Check Whether a Year is Leap Year or Not</h3>
+<a href="#q5">View Solution</a>
+
+<details id="q5">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int year;
+
+    printf("Enter a year: ");
+    scanf("%d", &year);
+
+    if(year % 400 == 0 ||
+       (year % 4 == 0 && year % 100 != 0))
+        printf("Leap Year");
+    else
+        printf("Not a Leap Year");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a year: 2024
+Leap Year
+</pre>
+</details>
+
+<hr>
+
+<h3>6. Check Voting Eligibility Using if-else</h3>
+<a href="#q6">View Solution</a>
+
+<details id="q6">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int age;
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    if(age >= 18)
+        printf("Eligible to Vote");
+    else
+        printf("Not Eligible to Vote");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter your age: 20
+Eligible to Vote
+</pre>
+</details>
+
+<hr>
+
+<h3>7. Find Grade Using Else-if Ladder</h3>
+<a href="#q7">View Solution</a>
+
+<details id="q7">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int marks;
+
+    printf("Enter marks: ");
+    scanf("%d", &marks);
+
+    if(marks >= 90 && marks <= 100)
+        printf("Grade A");
+    else if(marks >= 75 && marks < 90)
+        printf("Grade B");
+    else if(marks >= 60 && marks < 75)
+        printf("Grade C");
+    else if(marks >= 40 && marks < 60)
+        printf("Grade D");
+    else if(marks >= 0 && marks < 40)
+        printf("Fail");
+    else
+        printf("Invalid Marks");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter marks: 85
+Grade B
+</pre>
+</details>
+
+<hr>
+
+<h3>8. Check Whether a Number is Divisible by 5 and 11</h3>
+<a href="#q8">View Solution</a>
+
+<details id="q8">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if(n % 5 == 0 && n % 11 == 0)
+        printf("Divisible by 5 and 11");
+    else
+        printf("Not Divisible by 5 and 11");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a number: 55
+Divisible by 5 and 11
+</pre>
+</details>
+
+<hr>
+
+<h3>9. Simple Calculator Using Switch Statement</h3>
+<a href="#q9">View Solution</a>
+
+<details id="q9">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b;
+    char op;
+
+    printf("Enter operator (+, -, *, /): ");
+    scanf(" %c", &op);
+
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+
+    switch(op)
+    {
+        case '+':
+            printf("Addition = %d", a + b);
+            break;
+
+        case '-':
+            printf("Subtraction = %d", a - b);
+            break;
+
+        case '*':
+            printf("Multiplication = %d", a * b);
+            break;
+
+        case '/':
+            if(b != 0)
+                printf("Division = %.2f", (float)a / b);
+            else
+                printf("Cannot divide by zero");
+            break;
+
+        default:
+            printf("Invalid Operator");
+    }
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter operator (+, -, *, /): +
+Enter two numbers: 10 20
+Addition = 30
+</pre>
+</details>
+
+<hr>
+
+<h3>10. Check Vowel or Consonant Using Switch</h3>
+<a href="#q10">View Solution</a>
+
+<details id="q10">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch;
+
+    printf("Enter an alphabet: ");
+    scanf(" %c", &ch);
+
+    switch(ch)
+    {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+            printf("Vowel");
+            break;
+
+        default:
+            if((ch >= 'a' && ch <= 'z') ||
+               (ch >= 'A' && ch <= 'Z'))
+                printf("Consonant");
+            else
+                printf("Not an Alphabet");
+    }
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter an alphabet: A
+Vowel
+</pre>
+</details>
+
+<hr>
+
+<h3>11. Check Whether a Character is Uppercase or Lowercase</h3>
+<a href="#q11">View Solution</a>
+
+<details id="q11">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch;
+
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+
+    if(ch >= 'A' && ch <= 'Z')
+        printf("Uppercase Letter");
+    else if(ch >= 'a' && ch <= 'z')
+        printf("Lowercase Letter");
+    else
+        printf("Not an Alphabet");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a character: b
+Lowercase Letter
+</pre>
+</details>
+
+<hr>
+
+<h3>12. Check Whether a Number is a Three-Digit Number</h3>
+<a href="#q12">View Solution</a>
+
+<details id="q12">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if(n >= 100 && n <= 999)
+        printf("Three Digit Number");
+    else
+        printf("Not a Three Digit Number");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a number: 456
+Three Digit Number
+</pre>
+</details>
+
+<hr>
+
+</body>
+</html>

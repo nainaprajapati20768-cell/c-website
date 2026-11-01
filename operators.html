@@ -1,0 +1,411 @@
+<html>
+<head>
+    <title>Operators in C</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Operators in C Programming</h1>
+
+<hr>
+
+<h3>1. Pre-Increment Operator</h3>
+<a href="#q1">View Solution</a>
+
+<details id="q1">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 5;
+
+    printf("Before increment = %d\n", a);
+    printf("After increment = %d", ++a);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Before increment = 5
+After increment = 6
+</pre>
+</details>
+
+<hr>
+
+<h3>2. Post-Increment Operator</h3>
+<a href="#q2">View Solution</a>
+
+<details id="q2">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 5;
+
+    printf("Before increment = %d\n", a);
+    printf("Post increment = %d\n", a++);
+    printf("After increment = %d", a);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Before increment = 5
+Post increment = 5
+After increment = 6
+</pre>
+</details>
+
+<hr>
+
+<h3>3. Pre-Decrement Operator</h3>
+<a href="#q3">View Solution</a>
+
+<details id="q3">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 5;
+
+    printf("Before decrement = %d\n", a);
+    printf("After decrement = %d", --a);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Before decrement = 5
+After decrement = 4
+</pre>
+</details>
+
+<hr>
+
+<h3>4. Post-Decrement Operator</h3>
+<a href="#q4">View Solution</a>
+
+<details id="q4">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 5;
+
+    printf("Before decrement = %d\n", a);
+    printf("Post decrement = %d\n", a--);
+    printf("After decrement = %d", a);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Before decrement = 5
+Post decrement = 5
+After decrement = 4
+</pre>
+</details>
+
+<hr>
+
+<h3>5. Arithmetic Operations</h3>
+<a href="#q5">View Solution</a>
+
+<details id="q5">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("Addition = %d\n", a + b);
+    printf("Subtraction = %d\n", a - b);
+    printf("Multiplication = %d\n", a * b);
+
+    if (b != 0)
+    {
+        printf("Division = %.2f\n", (float)a / b);
+        printf("Modulo = %d", a % b);
+    }
+    else
+    {
+        printf("Division by zero is not possible.");
+    }
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter two numbers: 17 5
+Addition = 22
+Subtraction = 12
+Multiplication = 85
+Division = 3.40
+Modulo = 2
+</pre>
+</details>
+
+<hr>
+
+<h3>6. Find Last Digit of an Integer</h3>
+<a href="#q6">View Solution</a>
+
+<details id="q6">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Last digit = %d", num % 10);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a number: 12345
+Last digit = 5
+</pre>
+</details>
+
+<hr>
+
+<h3>7. Find Fractional Part of a Float Number</h3>
+<a href="#q7">View Solution</a>
+
+<details id="q7">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float num, fraction;
+
+    printf("Enter a decimal number: ");
+    scanf("%f", &num);
+
+    fraction = num - (int)num;
+
+    if (fraction < 0)
+        fraction = -fraction;
+
+    printf("Fractional part = %.2f", fraction);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a decimal number: 12.75
+Fractional part = 0.75
+</pre>
+</details>
+
+<hr>
+
+<h3>8. Find Cube of a Number</h3>
+<a href="#q8">View Solution</a>
+
+<details id="q8">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num, cube;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    cube = num * num * num;
+
+    printf("Cube = %d", cube);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a number: 3
+Cube = 27
+</pre>
+</details>
+
+<hr>
+
+<h3>9. Round Off a Float Number</h3>
+<a href="#q9">View Solution</a>
+
+<details id="q9">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float num;
+    int result;
+
+    printf("Enter a decimal number: ");
+    scanf("%f", &num);
+
+    if (num >= 0)
+        result = (int)(num + 0.5);
+    else
+        result = (int)(num - 0.5);
+
+    printf("Rounded number = %d", result);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a decimal number: 8.6
+Rounded number = 9
+</pre>
+</details>
+
+<hr>
+
+<h3>10. Convert Lowercase into Uppercase</h3>
+<a href="#q10">View Solution</a>
+
+<details id="q10">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch;
+
+    printf("Enter a lowercase character: ");
+    scanf("%c", &ch);
+
+    if (ch >= 'a' && ch <= 'z')
+    {
+        ch = ch - 32;
+    }
+
+    printf("Uppercase = %c", ch);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a lowercase character: g
+Uppercase = G
+</pre>
+</details>
+
+<hr>
+
+<h3>11. Calculate Total and Average of Five Subjects</h3>
+<a href="#q11">View Solution</a>
+
+<details id="q11">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b, c, d, e, total;
+    float average;
+
+    printf("Enter marks of five subjects: ");
+    scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
+
+    total = a + b + c + d + e;
+    average = total / 5.0;
+
+    printf("Total = %d\n", total);
+    printf("Average = %.2f", average);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter marks of five subjects: 80 75 90 85 70
+Total = 400
+Average = 80.00
+</pre>
+</details>
+
+<hr>
+
+<h3>12. Calculate Simple Interest</h3>
+<a href="#q12">View Solution</a>
+
+<details id="q12">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float p, r, t, si;
+
+    printf("Enter principal, rate and time: ");
+    scanf("%f %f %f", &p, &r, &t);
+
+    si = (p * r * t) / 100;
+
+    printf("Simple Interest = %.2f", si);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter principal, rate and time: 5000 5 2
+Simple Interest = 500.00
+</pre>
+</details>
+
+<hr>
+
+</body>
+</html>

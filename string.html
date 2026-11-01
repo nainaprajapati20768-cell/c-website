@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String in C</title>
+<head>
+    <title>String in C</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<h1>String in C Programming</h1>
+<hr>
+
+<h3>1. Input and Display a String</h3>
+<a href="#q1">View Solution</a>
+
+<details id="q1">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char str[50];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("String = %s", str);
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a string: Hello
+String = Hello
+</pre>
+</details>
+
+<hr>
+
+<h3>2. Find Length of a String</h3>
+<a href="#q2">View Solution</a>
+
+<details id="q2">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[50];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Length = %d", strlen(str));
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a string: Hello
+Length = 5
+</pre>
+</details>
+
+<hr>
+
+<h3>3. Copy One String into Another</h3>
+<a href="#q3">View Solution</a>
+
+<details id="q3">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str1[50], str2[50];
+
+    printf("Enter a string: ");
+    scanf("%s", str1);
+
+    strcpy(str2, str1);
+
+    printf("Copied String = %s", str2);
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a string: Computer
+Copied String = Computer
+</pre>
+</details>
+
+<hr>
+
+<h3>4. Compare Two Strings</h3>
+<a href="#q4">View Solution</a>
+
+<details id="q4">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str1[50], str2[50];
+
+    printf("Enter first string: ");
+    scanf("%s", str1);
+
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+    if(strcmp(str1, str2) == 0)
+        printf("Strings are Equal");
+    else
+        printf("Strings are Not Equal");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter first string: Hello
+Enter second string: Hello
+Strings are Equal
+</pre>
+</details>
+
+<hr>
+
+<h3>5. Join Two Strings</h3>
+<a href="#q5">View Solution</a>
+
+<details id="q5">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str1[100], str2[50];
+
+    printf("Enter first string: ");
+    scanf("%s", str1);
+
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+    strcat(str1, str2);
+
+    printf("Joined String = %s", str1);
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter first string: Hello
+Enter second string: World
+Joined String = HelloWorld
+</pre>
+</details>
+
+<hr>
+
+<h3>6. Reverse a String</h3>
+<a href="#q6">View Solution</a>
+
+<details id="q6">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[50];
+    int i;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Reverse String = ");
+
+    for(i = strlen(str) - 1; i >= 0; i--)
+    {
+        printf("%c", str[i]);
+    }
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a string: Hello
+Reverse String = olleH
+</pre>
+</details>
+
+<hr>
+
+<h3>7. Convert String into Uppercase</h3>
+<a href="#q7">View Solution</a>
+
+<details id="q7">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main()
+{
+    char str[50];
+    int i;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        str[i] = toupper(str[i]);
+    }
+
+    printf("Uppercase = %s", str);
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a string: hello
+Uppercase = HELLO
+</pre>
+</details>
+
+<hr>
+
+<h3>8. Convert String into Lowercase</h3>
+<a href="#q8">View Solution</a>
+
+<details id="q8">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main()
+{
+    char str[50];
+    int i;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        str[i] = tolower(str[i]);
+    }
+
+    printf("Lowercase = %s", str);
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a string: HELLO
+Lowercase = hello
+</pre>
+</details>
+
+<hr>
+
+<h3>9. Count Vowels in a String</h3>
+<a href="#q9">View Solution</a>
+
+<details id="q9">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char str[50];
+    int i, count = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == 'a' || str[i] == 'e' ||
+           str[i] == 'i' || str[i] == 'o' ||
+           str[i] == 'u' || str[i] == 'A' ||
+           str[i] == 'E' || str[i] == 'I' ||
+           str[i] == 'O' || str[i] == 'U')
+        {
+            count++;
+        }
+    }
+
+    printf("Total Vowels = %d", count);
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a string: Education
+Total Vowels = 5
+</pre>
+</details>
+
+<hr>
+
+<h3>10. Check Palindrome String</h3>
+<a href="#q10">View Solution</a>
+
+<details id="q10">
+<summary>Solution</summary>
+
+<h4>C Program</h4>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[50];
+    int i, len, flag = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    len = strlen(str);
+
+    for(i = 0; i < len / 2; i++)
+    {
+        if(str[i] != str[len - i - 1])
+        {
+            flag = 1;
+            break;
+        }
+    }
+
+    if(flag == 0)
+        printf("Palindrome String");
+    else
+        printf("Not Palindrome String");
+
+    return 0;
+}
+</pre>
+
+<h4>Output</h4>
+<pre>
+Enter a string: madam
+Palindrome String
+</pre>
+</details>
+
+<hr>
+
+</body>
+</html>
