@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recursion in C</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Recursion in C</h1>
+
+<h3>Question 1: Write a program of recursion and display the output.</h3>
+
+<details>
+<summary>View Solution</summary>
+
+<pre>
+#include <stdio.h>
+
+void show(int n)
+{
+    if(n > 0)
+    {
+        printf("%d ", n);
+        show(n - 1);
+    }
+}
+
+int main()
+{
+    show(5);
+
+    return 0;
+}
+</pre>
+
+<b>Output:</b>
+<pre>
+5 4 3 2 1
+</pre>
+</details>
+
+
+<hr>
+
+<h3>Question 2: Write a program of recursion with global variable and display the output.</h3>
+
+<details>
+<summary>View Solution</summary>
+
+<pre>
+#include <stdio.h>
+
+int n = 5;
+
+void show()
+{
+    if(n > 0)
+    {
+        printf("%d ", n);
+        n--;
+        show();
+    }
+}
+
+int main()
+{
+    show();
+
+    return 0;
+}
+</pre>
+
+<b>Output:</b>
+<pre>
+5 4 3 2 1
+</pre>
+</details>
+
+<hr>
+
+<h3>Question 3: Write a program of recursion with local variable and display the output.</h3>
+
+<details>
+<summary>View Solution</summary>
+
+<pre>
+#include <stdio.h>
+
+void show(int n)
+{
+    int a = n;
+
+    if(a > 0)
+    {
+        printf("%d ", a);
+        show(a - 1);
+    }
+}
+
+int main()
+{
+    show(5);
+
+    return 0;
+}
+</pre>
+
+<b>Output:</b>
+<pre>
+5 4 3 2 1
+</pre>
+</details>
+
+<br>
+
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>

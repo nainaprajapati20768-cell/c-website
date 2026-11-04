@@ -1,406 +1,836 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>String in C</title>
-<head>
-    <title>String in C</title>
+    <title>Strings in C</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-<h1>String in C Programming</h1>
+<h1>Strings in C Programming</h1>
 <hr>
 
-<h3>1. Input and Display a String</h3>
+<h3>1. Enter a string from user and convert in uppercase ?</h3>
 <a href="#q1">View Solution</a>
-
 <details id="q1">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str[50];
+    char a[100];
+    int i = 0;
 
     printf("Enter a string: ");
-    scanf("%s", str);
+    scanf(" %[^\n]", a);
 
-    printf("String = %s", str);
+    while(a[i] != '\0')
+    {
+        if(a[i] >= 'a' && a[i] <= 'z')
+        {
+            a[i] = a[i] - 32;
+        }
+        i++;
+    }
+
+    printf("%s", a);
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
-Enter a string: Hello
-String = Hello
+Enter a string: hello
+HELLO
 </pre>
 </details>
-
 <hr>
 
-<h3>2. Find Length of a String</h3>
+<h3>2. Enter a string from user and convert into lowercase ?</h3>
 <a href="#q2">View Solution</a>
-
 <details id="q2">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str[50];
+    char a[100];
+    int i = 0;
 
     printf("Enter a string: ");
-    scanf("%s", str);
+    scanf(" %[^\n]", a);
 
-    printf("Length = %d", strlen(str));
+    while(a[i] != '\0')
+    {
+        if(a[i] >= 'A' && a[i] <= 'Z')
+        {
+            a[i] = a[i] + 32;
+        }
+        i++;
+    }
+
+    printf("%s", a);
 
     return 0;
 }
 </pre>
+<h4>Output</h4>
+<pre>
+Enter a string: HELLO
+hello
+</pre>
+</details>
+<hr>
 
+<h3>3. Enter a string from user and convert into sentence case ?</h3>
+<a href="#q3">View Solution</a>
+<details id="q3">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100];
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", a);
+
+    if(a[0] >= 'a' && a[0] <= 'z')
+    {
+        a[0] = a[0] - 32;
+    }
+
+    i = 1;
+
+    while(a[i] != '\0')
+    {
+        if(a[i] >= 'A' && a[i] <= 'Z')
+        {
+            a[i] = a[i] + 32;
+        }
+        i++;
+    }
+
+    printf("%s", a);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a string: hELLO WORLD
+Hello world
+</pre>
+</details>
+<hr>
+
+<h3>4. Enter a string from user and convert into title case ?</h3>
+<a href="#q4">View Solution</a>
+<details id="q4">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100];
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", a);
+
+    if(a[0] >= 'a' && a[0] <= 'z')
+    {
+        a[0] = a[0] - 32;
+    }
+
+    while(a[i] != '\0')
+    {
+        if(a[i] == ' ')
+        {
+            if(a[i+1] >= 'a' && a[i+1] <= 'z')
+            {
+                a[i+1] = a[i+1] - 32;
+            }
+        }
+        else if(a[i] >= 'A' && a[i] <= 'Z' && i != 0)
+        {
+            if(a[i-1] != ' ')
+            {
+                a[i] = a[i] + 32;
+            }
+        }
+
+        i++;
+    }
+
+    printf("%s", a);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a string: hello world
+Hello World
+</pre>
+</details>
+<hr>
+
+<h3>5. Enter a string from user and convert into toggle case ?</h3>
+<a href="#q5">View Solution</a>
+<details id="q5">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100];
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", a);
+
+    while(a[i] != '\0')
+    {
+        if(a[i] >= 'a' && a[i] <= 'z')
+        {
+            a[i] = a[i] - 32;
+        }
+        else if(a[i] >= 'A' && a[i] <= 'Z')
+        {
+            a[i] = a[i] + 32;
+        }
+
+        i++;
+    }
+
+    printf("%s", a);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a string: HeLLo
+hEllO
+</pre>
+</details>
+<hr>
+
+<h3>6. Enter a string from user and final length of the string ?</h3>
+<a href="#q6">View Solution</a>
+<details id="q6">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100];
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", a);
+
+    while(a[i] != '\0')
+    {
+        i++;
+    }
+
+    printf("Length = %d", i);
+
+    return 0;
+}
+</pre>
 <h4>Output</h4>
 <pre>
 Enter a string: Hello
 Length = 5
 </pre>
 </details>
-
 <hr>
 
-<h3>3. Copy One String into Another</h3>
-<a href="#q3">View Solution</a>
-
-<details id="q3">
+<h3>7. Enter a string from user and compare those string ?</h3>
+<a href="#q7">View Solution</a>
+<details id="q7">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str1[50], str2[50];
-
-    printf("Enter a string: ");
-    scanf("%s", str1);
-
-    strcpy(str2, str1);
-
-    printf("Copied String = %s", str2);
-
-    return 0;
-}
-</pre>
-
-<h4>Output</h4>
-<pre>
-Enter a string: Computer
-Copied String = Computer
-</pre>
-</details>
-
-<hr>
-
-<h3>4. Compare Two Strings</h3>
-<a href="#q4">View Solution</a>
-
-<details id="q4">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
-<pre>
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-
-int main()
-{
-    char str1[50], str2[50];
+    char a[100], b[100];
+    int i = 0;
 
     printf("Enter first string: ");
-    scanf("%s", str1);
+    scanf(" %[^\n]", a);
 
     printf("Enter second string: ");
-    scanf("%s", str2);
+    scanf(" %[^\n]", b);
 
-    if(strcmp(str1, str2) == 0)
-        printf("Strings are Equal");
+    while(a[i] == b[i] && a[i] != '\0')
+    {
+        i++;
+    }
+
+    if(a[i] == b[i])
+    {
+        printf("Strings are equal");
+    }
     else
-        printf("Strings are Not Equal");
+    {
+        printf("Strings are not equal");
+    }
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
 Enter first string: Hello
 Enter second string: Hello
-Strings are Equal
+Strings are equal
 </pre>
 </details>
-
 <hr>
 
-<h3>5. Join Two Strings</h3>
-<a href="#q5">View Solution</a>
-
-<details id="q5">
+<h3>8. Enter a string from user and concatenate the string ?</h3>
+<a href="#q8">View Solution</a>
+<details id="q8">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str1[100], str2[50];
+    char a[200], b[100];
+    int i = 0, j = 0;
 
     printf("Enter first string: ");
-    scanf("%s", str1);
+    scanf(" %[^\n]", a);
 
     printf("Enter second string: ");
-    scanf("%s", str2);
+    scanf(" %[^\n]", b);
 
-    strcat(str1, str2);
+    while(a[i] != '\0')
+    {
+        i++;
+    }
 
-    printf("Joined String = %s", str1);
+    while(b[j] != '\0')
+    {
+        a[i] = b[j];
+        i++;
+        j++;
+    }
+
+    a[i] = '\0';
+
+    printf("Concatenated string = %s", a);
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
 Enter first string: Hello
 Enter second string: World
-Joined String = HelloWorld
+Concatenated string = HelloWorld
 </pre>
 </details>
-
 <hr>
 
-<h3>6. Reverse a String</h3>
-<a href="#q6">View Solution</a>
-
-<details id="q6">
+<h3>9. Enter a string from user and copy that string into another string ?</h3>
+<a href="#q9">View Solution</a>
+<details id="q9">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str[50];
-    int i;
+    char a[100], b[100];
+    int i = 0;
 
     printf("Enter a string: ");
-    scanf("%s", str);
+    scanf(" %[^\n]", a);
 
-    printf("Reverse String = ");
-
-    for(i = strlen(str) - 1; i >= 0; i--)
+    while(a[i] != '\0')
     {
-        printf("%c", str[i]);
+        b[i] = a[i];
+        i++;
     }
+
+    b[i] = '\0';
+
+    printf("Copied string = %s", b);
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
 Enter a string: Hello
-Reverse String = olleH
+Copied string = Hello
 </pre>
 </details>
-
 <hr>
 
-<h3>7. Convert String into Uppercase</h3>
-<a href="#q7">View Solution</a>
-
-<details id="q7">
+<h3>10. Enter the string from user, enter a number from user, if the user enter 0 then you will print first character of string, if the user enter 1 then you will print second character of string, if user enter 2 then you will print third character of string, if user enter 3 then you print fourth character of string and if out of string then you will print out of bound ?</h3>
+<a href="#q10">View Solution</a>
+<details id="q10">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
-#include &lt;ctype.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str[50];
-    int i;
+    char a[100];
+    int n, i = 0;
 
     printf("Enter a string: ");
-    scanf("%s", str);
+    scanf(" %[^\n]", a);
 
-    for(i = 0; str[i] != '\0'; i++)
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    while(a[i] != '\0')
     {
-        str[i] = toupper(str[i]);
+        i++;
     }
 
-    printf("Uppercase = %s", str);
+    if(n < i && n >= 0)
+    {
+        printf("Character = %c", a[n]);
+    }
+    else
+    {
+        printf("Out of bound");
+    }
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
-Enter a string: hello
-Uppercase = HELLO
+Enter a string: Hello
+Enter a number: 2
+Character = l
 </pre>
 </details>
-
 <hr>
 
-<h3>8. Convert String into Lowercase</h3>
-<a href="#q8">View Solution</a>
-
-<details id="q8">
+<h3>11. Enter the string from user and print each character in new line ?</h3>
+<a href="#q11">View Solution</a>
+<details id="q11">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
-#include &lt;ctype.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str[50];
-    int i;
+    char a[100];
+    int i = 0;
 
     printf("Enter a string: ");
-    scanf("%s", str);
+    scanf(" %[^\n]", a);
 
-    for(i = 0; str[i] != '\0'; i++)
+    while(a[i] != '\0')
     {
-        str[i] = tolower(str[i]);
+        printf("%c\n", a[i]);
+        i++;
     }
-
-    printf("Lowercase = %s", str);
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
-Enter a string: HELLO
-Lowercase = hello
+Enter a string: Hello
+
+H
+e
+l
+l
+o
 </pre>
 </details>
-
 <hr>
 
-<h3>9. Count Vowels in a String</h3>
-<a href="#q9">View Solution</a>
-
-<details id="q9">
+<h3>12. Enter the string from user and copy reverse order into another string ?</h3>
+<a href="#q12">View Solution</a>
+<details id="q12">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str[50];
-    int i, count = 0;
+    char a[100], b[100];
+    int i = 0, j = 0;
 
     printf("Enter a string: ");
-    scanf("%s", str);
+    scanf(" %[^\n]", a);
 
-    for(i = 0; str[i] != '\0'; i++)
+    while(a[i] != '\0')
     {
-        if(str[i] == 'a' || str[i] == 'e' ||
-           str[i] == 'i' || str[i] == 'o' ||
-           str[i] == 'u' || str[i] == 'A' ||
-           str[i] == 'E' || str[i] == 'I' ||
-           str[i] == 'O' || str[i] == 'U')
+        i++;
+    }
+
+    i--;
+
+    while(i >= 0)
+    {
+        b[j] = a[i];
+        i--;
+        j++;
+    }
+
+    b[j] = '\0';
+
+    printf("Reverse string = %s", b);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a string: Hello
+Reverse string = olleH
+</pre>
+</details>
+<hr>
+
+<h3>13. Enter two string from user and print difference each character ?</h3>
+<a href="#q13">View Solution</a>
+<details id="q13">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100], b[100];
+    int i = 0;
+
+    printf("Enter first string: ");
+    scanf(" %[^\n]", a);
+
+    printf("Enter second string: ");
+    scanf(" %[^\n]", b);
+
+    while(a[i] != '\0' && b[i] != '\0')
+    {
+        printf("%d\n", a[i] - b[i]);
+        i++;
+    }
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter first string: abc
+Enter second string: aaa
+
+0
+1
+2
+</pre>
+</details>
+<hr>
+
+<h3>14. Enter the string from user and enter a character, it is exist or not ?</h3>
+<a href="#q14">View Solution</a>
+<details id="q14">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100], ch;
+    int i = 0, found = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", a);
+
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+
+    while(a[i] != '\0')
+    {
+        if(a[i] == ch)
+        {
+            found = 1;
+        }
+        i++;
+    }
+
+    if(found == 1)
+    {
+        printf("Character exists");
+    }
+    else
+    {
+        printf("Character does not exist");
+    }
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a string: Hello
+Enter a character: e
+Character exists
+</pre>
+</details>
+<hr>
+
+<h3>15. Enter the string from user and enter a character if it is exist then print the bound number ?</h3>
+<a href="#q15">View Solution</a>
+<details id="q15">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100], ch;
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", a);
+
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+
+    while(a[i] != '\0')
+    {
+        if(a[i] == ch)
+        {
+            printf("Bound number = %d", i);
+            return 0;
+        }
+        i++;
+    }
+
+    printf("Character not found");
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter a string: Hello
+Enter a character: l
+Bound number = 2
+</pre>
+</details>
+<hr>
+
+<h3>16. Enter the string from user and count all vowels ?</h3>
+<a href="#q16">View Solution</a>
+<details id="q16">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100];
+    int i = 0, count = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", a);
+
+    while(a[i] != '\0')
+    {
+        if(a[i] == 'a' || a[i] == 'e' || a[i] == 'i' || a[i] == 'o' || a[i] == 'u' ||
+           a[i] == 'A' || a[i] == 'E' || a[i] == 'I' || a[i] == 'O' || a[i] == 'U')
         {
             count++;
         }
+
+        i++;
     }
 
-    printf("Total Vowels = %d", count);
+    printf("Total vowels = %d", count);
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
-Enter a string: Education
-Total Vowels = 5
+Enter a string: education
+Total vowels = 5
 </pre>
 </details>
-
 <hr>
 
-<h3>10. Check Palindrome String</h3>
-<a href="#q10">View Solution</a>
-
-<details id="q10">
+<h3>17. Enter the string from user and enter bound number and print character on that bound ?</h3>
+<a href="#q17">View Solution</a>
+<details id="q17">
 <summary>Solution</summary>
-
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char str[50];
-    int i, len, flag = 0;
+    char a[100];
+    int n, i = 0;
 
     printf("Enter a string: ");
-    scanf("%s", str);
+    scanf(" %[^\n]", a);
 
-    len = strlen(str);
+    printf("Enter bound number: ");
+    scanf("%d", &n);
 
-    for(i = 0; i < len / 2; i++)
+    while(a[i] != '\0')
     {
-        if(str[i] != str[len - i - 1])
-        {
-            flag = 1;
-            break;
-        }
+        i++;
     }
 
-    if(flag == 0)
-        printf("Palindrome String");
+    if(n >= 0 && n < i)
+    {
+        printf("Character = %c", a[n]);
+    }
     else
-        printf("Not Palindrome String");
+    {
+        printf("Out of bound");
+    }
 
     return 0;
 }
 </pre>
+<h4>Output</h4>
+<pre>
+Enter a string: Hello
+Enter bound number: 1
+Character = e
+</pre>
+</details>
+<hr>
 
+<h3>18. String palindrome example (using reverse) ?</h3>
+<a href="#q18">View Solution</a>
+<details id="q18">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char a[100], b[100];
+    int i = 0, j = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", a);
+
+    while(a[i] != '\0')
+    {
+        i++;
+    }
+
+    i--;
+
+    while(i >= 0)
+    {
+        b[j] = a[i];
+        i--;
+        j++;
+    }
+
+    b[j] = '\0';
+
+    i = 0;
+
+    while(a[i] == b[i] && a[i] != '\0')
+    {
+        i++;
+    }
+
+    if(a[i] == b[i])
+    {
+        printf("Palindrome");
+    }
+    else
+    {
+        printf("Not Palindrome");
+    }
+
+    return 0;
+}
+</pre>
 <h4>Output</h4>
 <pre>
 Enter a string: madam
-Palindrome String
+Palindrome
+</pre>
+</details>
+<hr>
+
+<h3>19. Enter the data from user the data consist of roll no. ,name ,class , marks of 5 subjects ?</h3>
+<a href="#q19">View Solution</a>
+<details id="q19">
+<summary>Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    int roll, m1, m2, m3, m4, m5;
+    char name[50], class[20];
+
+    printf("Enter roll number: ");
+    scanf("%d", &roll);
+
+    printf("Enter name: ");
+    scanf("%s", name);
+
+    printf("Enter class: ");
+    scanf("%s", class);
+
+    printf("Enter marks of 5 subjects: ");
+    scanf("%d%d%d%d%d", &m1, &m2, &m3, &m4, &m5);
+
+    printf("\nStudent Details\n");
+
+    printf("Roll Number = %d\n", roll);
+    printf("Name = %s\n", name);
+    printf("Class = %s\n", class);
+
+    printf("Marks = %d %d %d %d %d", m1, m2, m3, m4, m5);
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter roll number: 101
+Enter name: Naina
+Enter class: BCA
+Enter marks of 5 subjects: 80 75 90 85 70
+
+Student Details
+Roll Number = 101
+Name = Naina
+Class = BCA
+Marks = 80 75 90 85 70
 </pre>
 </details>
 
 <hr>
+
+<a href="index.html">Back to Home</a>
 
 </body>
 </html>

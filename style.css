@@ -1,7 +1,7 @@
 
-   body {
+body {
     font-family: Arial, sans-serif;
-    background-color: #F5E6D3;
+    background-color: #E8EDE5;
     margin: 0;
     padding: 20px;
 }
@@ -9,36 +9,61 @@
 h1 {
     text-align: center;
     color: white;
-    background-color: #795548;
+    background-color: #718B75;
     padding: 20px;
     border-radius: 8px;
 }
 
-h2 {
-    text-align: center;
-    color: #4E342E;
-    margin-top: 30px;
+h3 {
+    color: #526F57;
+    margin-top: 25px;
 }
 
+details {
+    margin-bottom: 15px;
+}
+
+summary {
+    color: #718B75;
+    cursor: pointer;
+}
+
+pre {
+    background-color: #FFFDF5;
+    color: #405B45;
+    padding: 15px;
+    border: 1px solid #B7C9B5;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+a {
+    color: #718B75;
+}
+
+a:hover {
+    color: #405B45;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #B7C9B5;
+}
+/* Home Page Alignment */
+
 .topic {
-    background-color: #FFFDF9;
+    background-color: #FFFDF5;
     width: 70%;
     margin: 15px auto;
     padding: 12px 20px;
-    border: 1px solid #BCA08A;
+    border: 1px solid #B7C9B5;
     border-radius: 8px;
 }
 
-.topic h3 {
-    color: #5D4037;
+h1 {
+    text-align: center;
 }
 
-.topic a {
-    color: #8D5A3B;
-    text-decoration: none;
-}
-
-.topic a:hover {
-    color: #4E342E;
-    text-decoration: underline;
+h2 {
+    text-align: center;
 }

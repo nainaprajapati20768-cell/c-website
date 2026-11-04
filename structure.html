@@ -1,13 +1,7 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Structure in C</title>
-
- 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="../../css/style.css">
-    <script src="../../js/script.js" defer></script>
 </head>
 
 <body>
@@ -15,16 +9,18 @@
 <h1>Structure in C Programming</h1>
 <hr>
 
-<h3>1. Write a program to store Employee ID, Name and Designation of 50 employees and display them in tabular form.</h3>
+<h3>1. Create structure of employee which there is emp.ID, name, designation of 50 employees from user, print details in tabular form ?</h3>
 
-<details>
-<summary>View Solution</summary>
+<a href="#q1">View Solution</a>
+
+<details id="q1">
+<summary>Solution</summary>
 
 <h4>C Program</h4>
 <pre>
 #include <stdio.h>
 
-struct Employee
+struct employee
 {
     int id;
     char name[30];
@@ -33,48 +29,71 @@ struct Employee
 
 int main()
 {
-    struct Employee e[50];
-    int i;
+    struct employee e[50];
+    int i = 0;
 
-    for(i=0; i<50; i++)
+    while(i < 50)
     {
-        printf("Enter ID, Name and Designation: ");
-        scanf("%d %s %s", &e[i].id,
-        e[i].name, e[i].designation);
+        printf("Enter employee ID: ");
+        scanf("%d", &e[i].id);
+
+        printf("Enter employee name: ");
+        scanf("%s", e[i].name);
+
+        printf("Enter designation: ");
+        scanf("%s", e[i].designation);
+
+        i++;
     }
 
     printf("\nID\tName\tDesignation\n");
 
-    for(i=0; i<50; i++)
+    i = 0;
+    while(i < 50)
     {
         printf("%d\t%s\t%s\n",
         e[i].id, e[i].name, e[i].designation);
+
+        i++;
     }
 
     return 0;
 }
 </pre>
 
-<h4>Output</h4>
+<h4>Output (sample)</h4>
 <pre>
-ID  Name   Designation
-1   Rahul  Manager
-2   Aman   Clerk
+Enter employee ID: 101
+Enter employee name: Rahul
+Enter designation: Manager
+
+Enter employee ID: 102
+Enter employee name: Aman
+Enter designation: Clerk
+
+... Enter details of remaining employees ...
+
+ID      Name    Designation
+101     Rahul   Manager
+102     Aman    Clerk
+... Remaining employee details ...
 </pre>
 </details>
 
 <hr>
 
-<h3>2. Write a program to display only names of 50 employees using structure.</h3>
+<h3>2. Create structure of employee which there is emp.ID, name, designation of 50 employees from user and print only name of the employee ?</h3>
 
-<details>
-<summary>View Solution</summary>
+<a href="#q2">View Solution</a>
+
+<details id="q2">
+<summary>Solution</summary>
 
 <h4>C Program</h4>
 <pre>
 #include <stdio.h>
 
-struct Employee
+struct employee
 {
     int id;
     char name[30];
@@ -83,125 +102,184 @@ struct Employee
 
 int main()
 {
-    struct Employee e[50];
-    int i;
+    struct employee e[50];
+    int i = 0;
 
-    for(i=0; i<50; i++)
+    while(i < 50)
     {
-        printf("Enter ID, Name and Designation: ");
-        scanf("%d %s %s", &e[i].id,
-        e[i].name, e[i].designation);
+        printf("Enter employee ID: ");
+        scanf("%d", &e[i].id);
+
+        printf("Enter employee name: ");
+        scanf("%s", e[i].name);
+
+        printf("Enter designation: ");
+        scanf("%s", e[i].designation);
+
+        i++;
     }
 
     printf("\nEmployee Names:\n");
 
-    for(i=0; i<50; i++)
+    i = 0;
+    while(i < 50)
     {
         printf("%s\n", e[i].name);
+        i++;
     }
 
     return 0;
 }
 </pre>
 
-<h4>Output</h4>
+<h4>Output (sample)</h4>
 <pre>
+Enter employee ID: 101
+Enter employee name: Rahul
+Enter designation: Manager
+
+Enter employee ID: 102
+Enter employee name: Aman
+Enter designation: Clerk
+
+... Enter details of remaining employees ...
+
 Employee Names:
 Rahul
 Aman
-Neha
+... Remaining employee names ...
 </pre>
 </details>
 
 <hr>
 
-<h3>3. Write a program to display each character of employee name with Employee ID.</h3>
+<h3>3. Create structure of employee which there is emp.ID, name, designation of 50 employees from user and print name character with emp.ID in tabular form ?</h3>
 
-<details>
-<summary>View Solution</summary>
+<a href="#q3">View Solution</a>
+
+<details id="q3">
+<summary>Solution</summary>
 
 <h4>C Program</h4>
 <pre>
 #include <stdio.h>
 
-struct Employee
+struct employee
 {
     int id;
     char name[30];
+    char designation[30];
 };
 
 int main()
 {
-    struct Employee e[50];
-    int i, j;
+    struct employee e[50];
+    int i = 0, j;
 
-    for(i=0; i<50; i++)
+    while(i < 50)
     {
-        printf("Enter ID and Name: ");
-        scanf("%d %s", &e[i].id, e[i].name);
+        printf("Enter employee ID: ");
+        scanf("%d", &e[i].id);
+
+        printf("Enter employee name: ");
+        scanf("%s", e[i].name);
+
+        printf("Enter designation: ");
+        scanf("%s", e[i].designation);
+
+        i++;
     }
 
     printf("\nID\tCharacter\n");
 
-    for(i=0; i<50; i++)
+    i = 0;
+    while(i < 50)
     {
-        for(j=0; e[i].name[j]!='\0'; j++)
+        j = 0;
+
+        while(e[i].name[j] != '\0')
         {
-            printf("%d\t%c\n", e[i].id,
-            e[i].name[j]);
+            printf("%d\t%c\n", e[i].id, e[i].name[j]);
+            j++;
         }
+
+        i++;
     }
 
     return 0;
 }
 </pre>
 
-<h4>Output</h4>
+<h4>Output (sample)</h4>
 <pre>
-ID  Character
-1   R
-1   a
-1   h
-1   u
-1   l
+Enter employee ID: 101
+Enter employee name: Rahul
+Enter designation: Manager
+
+... Enter details of remaining employees ...
+
+ID      Character
+101     R
+101     a
+101     h
+101     u
+101     l
 </pre>
 </details>
 
 <hr>
 
-<h3>4. Write a program to store Student Roll Number, Name, Fee and DOB and arrange records in ascending order of Roll Number.</h3>
+<h3>4. Enter student details like roll name, fee, DOB and print all the detail by ascending order of roll number ?</h3>
 
-<details>
-<summary>View Solution</summary>
+<a href="#q4">View Solution</a>
+
+<details id="q4">
+<summary>Solution</summary>
 
 <h4>C Program</h4>
 <pre>
 #include <stdio.h>
 
-struct Student
+struct student
 {
     int roll;
     char name[30];
     float fee;
-    char dob[15];
+    char dob[20];
 };
 
 int main()
 {
-    struct Student s[5], temp;
-    int i, j;
+    struct student s[50], temp;
+    int n, i, j;
 
-    for(i=0; i<5; i++)
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    i = 0;
+    while(i < n)
     {
-        printf("Enter Roll, Name, Fee and DOB: ");
-        scanf("%d %s %f %s",
-        &s[i].roll, s[i].name,
-        &s[i].fee, s[i].dob);
+        printf("Enter roll number: ");
+        scanf("%d", &s[i].roll);
+
+        printf("Enter name: ");
+        scanf("%s", s[i].name);
+
+        printf("Enter fee: ");
+        scanf("%f", &s[i].fee);
+
+        printf("Enter DOB: ");
+        scanf("%s", s[i].dob);
+
+        i++;
     }
 
-    for(i=0; i<5; i++)
+    i = 0;
+    while(i < n)
     {
-        for(j=i+1; j<5; j++)
+        j = i + 1;
+
+        while(j < n)
         {
             if(s[i].roll > s[j].roll)
             {
@@ -209,16 +287,22 @@ int main()
                 s[i] = s[j];
                 s[j] = temp;
             }
+
+            j++;
         }
+
+        i++;
     }
 
     printf("\nRoll\tName\tFee\tDOB\n");
 
-    for(i=0; i<5; i++)
+    i = 0;
+    while(i < n)
     {
         printf("%d\t%s\t%.2f\t%s\n",
-        s[i].roll, s[i].name,
-        s[i].fee, s[i].dob);
+        s[i].roll, s[i].name, s[i].fee, s[i].dob);
+
+        i++;
     }
 
     return 0;
@@ -227,14 +311,33 @@ int main()
 
 <h4>Output</h4>
 <pre>
-Roll  Name  Fee       DOB
-1     Aman  5000.00   10-05-2007
-2     Neha  6000.00   15-08-2007
-3     Rahul 5500.00   20-02-2007
+Enter number of students: 3
+
+Enter roll number: 3
+Enter name: Rahul
+Enter fee: 10000
+Enter DOB: 12-05-2006
+
+Enter roll number: 1
+Enter name: Aman
+Enter fee: 12000
+Enter DOB: 10-02-2006
+
+Enter roll number: 2
+Enter name: Ravi
+Enter fee: 11000
+Enter DOB: 15-08-2006
+
+Roll    Name    Fee       DOB
+1       Aman    12000.00  10-02-2006
+2       Ravi    11000.00  15-08-2006
+3       Rahul   10000.00  12-05-2006
 </pre>
 </details>
 
 <hr>
+
+<a href="index.html">Back to Home</a>
 
 </body>
 </html>

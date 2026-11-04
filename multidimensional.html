@@ -1,288 +1,398 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>2D Array in C</title>
-
     <link rel="stylesheet" href="style.css">
-</head>
 </head>
 
 <body>
 
-<h1>2D Array in C Programming</h1>
+<h1>2D Array / Matrix in C Programming</h1>
 <hr>
 
-<h3>1. Input and Display a 2D Array</h3>
+<h3>1. Enter the four number from user and print it into matrix</h3>
 <a href="#q1">View Solution</a>
-
 <details id="q1">
 <summary>Solution</summary>
-
 <h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    int a[2][2], i, j;
+    int a[2][2];
+    int i, j;
 
-    printf("Enter 4 elements: ");
+    printf("Enter four numbers:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             scanf("%d", &a[i][j]);
+            j++;
         }
+        i++;
     }
 
-    printf("Array elements:\n");
+    printf("Matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             printf("%d ", a[i][j]);
+            j++;
         }
         printf("\n");
+        i++;
     }
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
-Enter 4 elements: 1 2 3 4
-Array elements:
+Enter four numbers:
+1 2
+3 4
+
+Matrix:
 1 2
 3 4
 </pre>
 </details>
-
 <hr>
 
-<h3>2. Addition of Two Matrices</h3>
+<h3>2. Enter the matrix from user and transpose them ?</h3>
 <a href="#q2">View Solution</a>
-
 <details id="q2">
 <summary>Solution</summary>
-
 <h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
+
+int main()
+{
+    int a[2][2];
+    int i, j;
+
+    printf("Enter four numbers:\n");
+
+    i = 0;
+    while(i < 2)
+    {
+        j = 0;
+        while(j < 2)
+        {
+            scanf("%d", &a[i][j]);
+            j++;
+        }
+        i++;
+    }
+
+    printf("Transpose Matrix:\n");
+
+    i = 0;
+    while(i < 2)
+    {
+        j = 0;
+        while(j < 2)
+        {
+            printf("%d ", a[j][i]);
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+
+    return 0;
+}
+</pre>
+<h4>Output</h4>
+<pre>
+Enter four numbers:
+1 2
+3 4
+
+Transpose Matrix:
+1 3
+2 4
+</pre>
+</details>
+<hr>
+
+<h3>3. Enter 2 matrix from user and add them ?</h3>
+<a href="#q3">View Solution</a>
+<details id="q3">
+<summary>Solution</summary>
+<h4>C Program</h4>
+<pre>
+#include <stdio.h>
 
 int main()
 {
     int a[2][2], b[2][2], c[2][2];
     int i, j;
 
-    printf("Enter first matrix: ");
+    printf("Enter first matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             scanf("%d", &a[i][j]);
+            j++;
         }
+        i++;
     }
 
-    printf("Enter second matrix: ");
+    printf("Enter second matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             scanf("%d", &b[i][j]);
+            j++;
         }
+        i++;
     }
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             c[i][j] = a[i][j] + b[i][j];
+            j++;
         }
+        i++;
     }
 
-    printf("Addition of matrices:\n");
+    printf("Addition of matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             printf("%d ", c[i][j]);
+            j++;
         }
         printf("\n");
+        i++;
     }
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
 Enter first matrix:
 1 2
 3 4
+
 Enter second matrix:
 5 6
 7 8
 
-Addition of matrices:
+Addition of matrix:
 6 8
 10 12
 </pre>
 </details>
-
 <hr>
 
-<h3>3. Subtraction of Two Matrices</h3>
-<a href="#q3">View Solution</a>
-
-<details id="q3">
+<h3>4. Enter 2 matrix from user and subtract them ?</h3>
+<a href="#q4">View Solution</a>
+<details id="q4">
 <summary>Solution</summary>
-
 <h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
     int a[2][2], b[2][2], c[2][2];
     int i, j;
 
-    printf("Enter first matrix: ");
+    printf("Enter first matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             scanf("%d", &a[i][j]);
+            j++;
         }
+        i++;
     }
 
-    printf("Enter second matrix: ");
+    printf("Enter second matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             scanf("%d", &b[i][j]);
+            j++;
         }
+        i++;
     }
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             c[i][j] = a[i][j] - b[i][j];
+            j++;
         }
+        i++;
     }
 
-    printf("Subtraction of matrices:\n");
+    printf("Subtraction of matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             printf("%d ", c[i][j]);
+            j++;
         }
         printf("\n");
+        i++;
     }
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
 Enter first matrix:
-8 7
-6 5
+8 6
+7 5
+
 Enter second matrix:
 1 2
 3 4
 
-Subtraction of matrices:
-7 5
-3 1
+Subtraction of matrix:
+7 4
+4 1
 </pre>
 </details>
-
 <hr>
 
-<h3>4. Multiplication of Two Matrices</h3>
-<a href="#q4">View Solution</a>
-
-<details id="q4">
+<h3>5. Enter 2 matrix from user and multiply them ?</h3>
+<a href="#q5">View Solution</a>
+<details id="q5">
 <summary>Solution</summary>
-
 <h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    int a[2][2], b[2][2], c[2][2] = {0};
+    int a[2][2], b[2][2], c[2][2];
     int i, j, k;
 
-    printf("Enter first matrix: ");
+    printf("Enter first matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             scanf("%d", &a[i][j]);
+            j++;
         }
+        i++;
     }
 
-    printf("Enter second matrix: ");
+    printf("Enter second matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             scanf("%d", &b[i][j]);
+            j++;
         }
+        i++;
     }
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
-            for(k = 0; k < 2; k++)
+            c[i][j] = 0;
+
+            k = 0;
+            while(k < 2)
             {
-                c[i][j] += a[i][k] * b[k][j];
+                c[i][j] = c[i][j] + a[i][k] * b[k][j];
+                k++;
             }
+
+            j++;
         }
+        i++;
     }
 
-    printf("Multiplication:\n");
+    printf("Multiplication of matrix:\n");
 
-    for(i = 0; i < 2; i++)
+    i = 0;
+    while(i < 2)
     {
-        for(j = 0; j < 2; j++)
+        j = 0;
+        while(j < 2)
         {
             printf("%d ", c[i][j]);
+            j++;
         }
         printf("\n");
+        i++;
     }
 
     return 0;
 }
 </pre>
-
 <h4>Output</h4>
 <pre>
 Enter first matrix:
 1 2
 3 4
+
 Enter second matrix:
 5 6
 7 8
 
-Multiplication:
+Multiplication of matrix:
 19 22
 43 50
 </pre>
@@ -290,156 +400,7 @@ Multiplication:
 
 <hr>
 
-<h3>5. Transpose of a Matrix</h3>
-<a href="#q5">View Solution</a>
-
-<details id="q5">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
-<pre>
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    int a[2][2], i, j;
-
-    printf("Enter 4 elements: ");
-
-    for(i = 0; i < 2; i++)
-    {
-        for(j = 0; j < 2; j++)
-        {
-            scanf("%d", &a[i][j]);
-        }
-    }
-
-    printf("Transpose:\n");
-
-    for(i = 0; i < 2; i++)
-    {
-        for(j = 0; j < 2; j++)
-        {
-            printf("%d ", a[j][i]);
-        }
-        printf("\n");
-    }
-
-    return 0;
-}
-</pre>
-
-<h4>Output</h4>
-<pre>
-Enter 4 elements:
-1 2
-3 4
-
-Transpose:
-1 3
-2 4
-</pre>
-</details>
-
-<hr>
-
-<h3>6. Find Sum of Diagonal Elements</h3>
-<a href="#q6">View Solution</a>
-
-<details id="q6">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
-<pre>
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    int a[2][2], i, j, sum = 0;
-
-    printf("Enter 4 elements: ");
-
-    for(i = 0; i < 2; i++)
-    {
-        for(j = 0; j < 2; j++)
-        {
-            scanf("%d", &a[i][j]);
-        }
-    }
-
-    for(i = 0; i < 2; i++)
-    {
-        sum = sum + a[i][i];
-    }
-
-    printf("Diagonal Sum = %d", sum);
-
-    return 0;
-}
-</pre>
-
-<h4>Output</h4>
-<pre>
-Enter 4 elements:
-1 2
-3 4
-Diagonal Sum = 5
-</pre>
-</details>
-
-<hr>
-
-<h3>7. Find Sum of Each Row</h3>
-<a href="#q7">View Solution</a>
-
-<details id="q7">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
-<pre>
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    int a[2][2], i, j, sum;
-
-    printf("Enter 4 elements: ");
-
-    for(i = 0; i < 2; i++)
-    {
-        for(j = 0; j < 2; j++)
-        {
-            scanf("%d", &a[i][j]);
-        }
-    }
-
-    for(i = 0; i < 2; i++)
-    {
-        sum = 0;
-
-        for(j = 0; j < 2; j++)
-        {
-            sum = sum + a[i][j];
-        }
-
-        printf("Row %d Sum = %d\n", i + 1, sum);
-    }
-
-    return 0;
-}
-</pre>
-
-<h4>Output</h4>
-<pre>
-Enter 4 elements:
-1 2
-3 4
-Row 1 Sum = 3
-Row 2 Sum = 7
-</pre>
-</details>
-
-<hr>
+<a href="index.html">Back to Home</a>
 
 </body>
 </html>

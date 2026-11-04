@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pointer in C Programming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pointer-page">
+
+<h1>Pointer in C Programming</h1>
+
+<hr>
+
+<h3>Question 1: Write a program in which a pointer should point to the array and through pointer we will fill the locations of the array by assigning values from the user and print the array.</h3>
+
+<details>
+<summary>View Solution</summary>
+
+<h4>C Program:</h4>
+
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    int a[5], *p, i;
+
+    p = a;
+
+    printf("Enter 5 numbers:\n");
+
+    for(i = 0; i < 5; i++)
+    {
+        scanf("%d", p+i);
+    }
+
+    printf("Array values are:\n");
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", *(p+i));
+    }
+
+    return 0;
+}
+</pre>
+
+<h4>Output:</h4>
+
+<pre>
+Enter 5 numbers:
+10 20 30 40 50
+
+Array values are:
+10 20 30 40 50
+</pre>
+
+</details>
+
+<hr>
+
+<h3>Question 2: Write the program in which we are having 2D array of 2 by 3. Insert the values through pointer and print the values.</h3>
+
+<details>
+<summary>View Solution</summary>
+
+<h4>C Program:</h4>
+
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    int a[2][3], *p, i;
+
+    p = &a[0][0];
+
+    printf("Enter 6 numbers:\n");
+
+    for(i = 0; i < 6; i++)
+    {
+        scanf("%d", p+i);
+    }
+
+    printf("Array values are:\n");
+
+    for(i = 0; i < 6; i++)
+    {
+        printf("%d ", *(p+i));
+    }
+
+    return 0;
+}
+</pre>
+
+<h4>Output:</h4>
+
+<pre>
+Enter 6 numbers:
+1 2 3 4 5 6
+
+Array values are:
+1 2 3 4 5 6
+</pre>
+
+</details>
+
+<hr>
+
+<br>
+
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>

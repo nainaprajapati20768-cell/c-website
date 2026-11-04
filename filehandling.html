@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Handling in C</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>File Handling in C</h1>
+
+<h3>Question 1: Enter a file name from the user and the data from the user and put it in file.</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    FILE *f;
+    char name[50], data[100];
+
+    printf("Enter file name: ");
+    scanf("%s", name);
+
+    printf("Enter data: ");
+    scanf("%s", data);
+
+    f = fopen(name, "w");
+    fprintf(f, "%s", data);
+    fclose(f);
+
+    printf("Data saved successfully");
+
+    return 0;
+}
+</pre>
+</details>
+
+<h3>Question 2: Enter the file name from the user and the data from the user and put it in file. But data should be in capital letters.</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+    FILE *f;
+    char name[50], data[100];
+    int i;
+
+    printf("Enter file name: ");
+    scanf("%s", name);
+
+    printf("Enter data: ");
+    scanf("%s", data);
+
+    for(i = 0; data[i] != '\0'; i++)
+    {
+        data[i] = toupper(data[i]);
+    }
+
+    f = fopen(name, "w");
+
+    fprintf(f, "%s", data);
+
+    fclose(f);
+
+    printf("Data saved in capital letters");
+
+    return 0;
+}
+</pre>
+</details>
+
+<h3>Question 3: Enter the file name from the user and the data from the user till the user wants to enter.</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    FILE *f;
+    char name[50], data[100], choice;
+
+    printf("Enter file name: ");
+    scanf("%s", name);
+
+    f = fopen(name, "w");
+
+    do
+    {
+        printf("Enter data: ");
+        scanf("%s", data);
+
+        fprintf(f, "%s\n", data);
+
+        printf("Enter y to continue: ");
+        scanf(" %c", &choice);
+
+    } while(choice == 'y' || choice == 'Y');
+
+    fclose(f);
+
+    printf("Data saved successfully");
+
+    return 0;
+}
+</pre>
+</details>
+
+<h3>Question 4: Enter the file name from the user and the data from the user and copy that file into another file.</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    FILE *f1, *f2;
+    char name1[50], name2[50], data[100], ch;
+
+    printf("Enter first file name: ");
+    scanf("%s", name1);
+
+    printf("Enter second file name: ");
+    scanf("%s", name2);
+
+    printf("Enter data: ");
+    scanf("%s", data);
+
+    f1 = fopen(name1, "w");
+    fprintf(f1, "%s", data);
+    fclose(f1);
+
+    f1 = fopen(name1, "r");
+    f2 = fopen(name2, "w");
+
+    while((ch = fgetc(f1)) != EOF)
+    {
+        fputc(ch, f2);
+    }
+
+    fclose(f1);
+    fclose(f2);
+
+    printf("File copied successfully");
+
+    return 0;
+}
+</pre>
+</details>
+
+<h3>Question 5: Enter the file name from the user and the data from the user and rename that file. But rename should be by user.</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    char oldname[50], newname[50], data[100];
+    FILE *f;
+
+    printf("Enter file name: ");
+    scanf("%s", oldname);
+
+    printf("Enter data: ");
+    scanf("%s", data);
+
+    f = fopen(oldname, "w");
+    fprintf(f, "%s", data);
+    fclose(f);
+
+    printf("Enter new file name: ");
+    scanf("%s", newname);
+
+    rename(oldname, newname);
+
+    printf("File renamed successfully");
+
+    return 0;
+}
+</pre>
+</details>
+
+<h3>Question 6: Enter two files from the user and concatenate into 3rd file.</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    FILE *f1, *f2, *f3;
+    char name1[50], name2[50], name3[50], ch;
+
+    printf("Enter first file name: ");
+    scanf("%s", name1);
+
+    printf("Enter second file name: ");
+    scanf("%s", name2);
+
+    printf("Enter third file name: ");
+    scanf("%s", name3);
+
+    f1 = fopen(name1, "r");
+    f2 = fopen(name2, "r");
+    f3 = fopen(name3, "w");
+
+    while((ch = fgetc(f1)) != EOF)
+    {
+        fputc(ch, f3);
+    }
+
+    while((ch = fgetc(f2)) != EOF)
+    {
+        fputc(ch, f3);
+    }
+
+    fclose(f1);
+    fclose(f2);
+    fclose(f3);
+
+    printf("Files joined successfully");
+
+    return 0;
+}
+</pre>
+</details>
+
+<h3>Question 7: Create a file and count no. of char in a file.</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    FILE *f;
+    char ch, data[100];
+    int count = 0;
+
+    printf("Enter data: ");
+    scanf("%s", data);
+
+    f = fopen("abc.txt", "w");
+    fprintf(f, "%s", data);
+    fclose(f);
+
+    f = fopen("abc.txt", "r");
+
+    while((ch = fgetc(f)) != EOF)
+    {
+        count++;
+    }
+
+    fclose(f);
+
+    printf("Total characters = %d", count);
+
+    return 0;
+}
+</pre>
+</details>
+
+<h3>Question 8: Create a file and count no. of words in a file.</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+
+int main()
+{
+    FILE *f;
+    char ch, data[100];
+    int count = 0;
+
+    printf("Enter data: ");
+    scanf("%s", data);
+
+    f = fopen("abc.txt", "w");
+    fprintf(f, "%s", data);
+    fclose(f);
+
+    f = fopen("abc.txt", "r");
+
+    while((ch = fgetc(f)) != EOF)
+    {
+        if(ch == ' ')
+        {
+            count++;
+        }
+    }
+
+    fclose(f);
+
+    printf("Total words = %d", count + 1);
+
+    return 0;
+}
+</pre>
+</details>
+
+<br>
+
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>

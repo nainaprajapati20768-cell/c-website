@@ -1,500 +1,711 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Loops in C</title>
     <link rel="stylesheet" href="style.css">
 </head>
-</head>
-
 <body>
 
-<h1>Loops in C Programming</h1>
+<h1>Iterative Control Structure in C</h1>
 <hr>
 
-<h3>1. Print Numbers from 1 to 10 Using For Loop</h3>
-<a href="#q1">View Solution</a>
-
-<details id="q1">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>1. Enter a number from the user and find out the binary of that number ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int i;
+    int n, r, rev=0;
 
-    for(i = 1; i <= 10; i++)
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(n>0)
     {
-        printf("%d ", i);
+        r=n%2;
+        rev=rev*10+r;
+        n=n/2;
+    }
+
+    while(rev>0)
+    {
+        printf("%d",rev%10);
+        rev=rev/10;
     }
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-1 2 3 4 5 6 7 8 9 10
-</pre>
+Output: 10 = 1010
 </details>
 
-<hr>
-
-<h3>2. Print Numbers from 1 to 10 Using While Loop</h3>
-<a href="#q2">View Solution</a>
-
-<details id="q2">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>2. Enter a number from the user and check that the number is divisible by any prime number or not ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int i = 1;
+    int n,i=2,j,count,found=0;
 
-    while(i <= 10)
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(i<n)
     {
-        printf("%d ", i);
+        if(n%i==0)
+        {
+            j=2;
+            count=0;
+
+            while(j<i)
+            {
+                if(i%j==0)
+                    count=1;
+                j++;
+            }
+
+            if(count==0)
+                found=1;
+        }
+        i++;
+    }
+
+    if(found==1)
+        printf("Divisible by prime number");
+    else
+        printf("Not divisible by prime number");
+
+    return 0;
+}
+</pre>
+Output: Enter 10 → Divisible by prime number
+</details>
+
+<h3>3. Enter a number from the user and check it is a prime number or not ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n,i=2,count=0;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(i<n)
+    {
+        if(n%i==0)
+            count=1;
+        i++;
+    }
+
+    if(n>1 && count==0)
+        printf("Prime number");
+    else
+        printf("Not prime number");
+
+    return 0;
+}
+</pre>
+Output: 7 = Prime number
+</details>
+
+<h3>4. Enter a number from the user and print all digit of the number in separate line ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(n>0)
+    {
+        printf("%d\n",n%10);
+        n=n/10;
+    }
+
+    return 0;
+}
+</pre>
+Output for 123:
+3
+2
+1
+</details>
+
+<h3>5. Write a program to print your name 1 lakh times ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int i=1;
+
+    while(i<=100000)
+    {
+        printf("YourName\n");
         i++;
     }
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-1 2 3 4 5 6 7 8 9 10
-</pre>
+Output: YourName prints 1 lakh times.
 </details>
 
-<hr>
-
-<h3>3. Print Numbers from 1 to 10 Using Do-While Loop</h3>
-<a href="#q3">View Solution</a>
-
-<details id="q3">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>6. Write a program to print a series 1 to 1 lakh ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int i = 1;
+    int i=1;
 
-    do
+    while(i<=100000)
     {
-        printf("%d ", i);
+        printf("%d\n",i);
         i++;
     }
-    while(i <= 10);
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-1 2 3 4 5 6 7 8 9 10
-</pre>
+Output: 1 2 3 ... 100000
 </details>
 
-<hr>
-
-<h3>4. Find Sum of First 10 Natural Numbers</h3>
-<a href="#q4">View Solution</a>
-
-<details id="q4">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>7. Enter a number from the user and print the series from 1 to that number ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int i, sum = 0;
+    int n,i=1;
 
-    for(i = 1; i <= 10; i++)
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(i<=n)
     {
-        sum = sum + i;
-    }
-
-    printf("Sum = %d", sum);
-
-    return 0;
-}
-</pre>
-
-<h4>Output</h4>
-<pre>
-Sum = 55
-</pre>
-</details>
-
-<hr>
-
-<h3>5. Print Multiplication Table of a Number</h3>
-<a href="#q5">View Solution</a>
-
-<details id="q5">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
-<pre>
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    int n, i;
-
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
-    for(i = 1; i <= 10; i++)
-    {
-        printf("%d x %d = %d\n", n, i, n * i);
+        printf("%d\n",i);
+        i++;
     }
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-Enter a number: 5
-5 x 1 = 5
-5 x 2 = 10
-5 x 3 = 15
-5 x 4 = 20
-5 x 5 = 25
-5 x 6 = 30
-5 x 7 = 35
-5 x 8 = 40
-5 x 9 = 45
-5 x 10 = 50
-</pre>
+Output: 1 2 3 4 5
 </details>
 
-<hr>
-
-<h3>6. Find Factorial of a Number</h3>
-<a href="#q6">View Solution</a>
-
-<details id="q6">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>8. Enter a number from the user and print that number 100 time ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int n, i, fact = 1;
+    int n,i=1;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
+    printf("Enter number: ");
+    scanf("%d",&n);
 
-    for(i = 1; i <= n; i++)
+    while(i<=100)
     {
-        fact = fact * i;
+        printf("%d\n",n);
+        i++;
     }
-
-    printf("Factorial = %d", fact);
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-Enter a number: 5
-Factorial = 120
-</pre>
+Output: Number prints 100 times.
 </details>
 
-<hr>
-
-<h3>7. Reverse a Number Using While Loop</h3>
-<a href="#q7">View Solution</a>
-
-<details id="q7">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>9. Write a program print all the odd number between 1 to 100 ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int n, rev = 0, rem;
+    int i=1;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
-    while(n > 0)
+    while(i<=100)
     {
-        rem = n % 10;
-        rev = rev * 10 + rem;
-        n = n / 10;
+        if(i%2!=0)
+            printf("%d\n",i);
+        i++;
     }
-
-    printf("Reverse = %d", rev);
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-Enter a number: 1234
-Reverse = 4321
-</pre>
+Output: 1 3 5 7 ... 99
 </details>
 
-<hr>
-
-<h3>8. Count Digits in a Number</h3>
-<a href="#q8">View Solution</a>
-
-<details id="q8">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>10. Write a program print the table of 4 in the format given as below (till 20)?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int n, count = 0;
+    int i=1;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
-    if(n == 0)
-        count = 1;
-
-    while(n != 0)
+    while(i<=20)
     {
-        count++;
-        n = n / 10;
+        printf("4*%d=%d\n",i,4*i);
+        i++;
     }
-
-    printf("Total Digits = %d", count);
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-Enter a number: 12345
-Total Digits = 5
-</pre>
+Output: 4*1=4 ... 4*20=80
 </details>
 
-<hr>
-
-<h3>9. Find Sum of Digits of a Number</h3>
-<a href="#q9">View Solution</a>
-
-<details id="q9">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>11. Enter the number from user and reverse the number?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int n, sum = 0, rem;
+    int n,rev=0;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
+    printf("Enter number: ");
+    scanf("%d",&n);
 
-    while(n > 0)
+    while(n>0)
     {
-        rem = n % 10;
-        sum = sum + rem;
-        n = n / 10;
+        rev=rev*10+n%10;
+        n=n/10;
     }
 
-    printf("Sum of Digits = %d", sum);
+    printf("Reverse = %d",rev);
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-Enter a number: 1234
-Sum of Digits = 10
-</pre>
+Output: 123 = 321
 </details>
 
-<hr>
-
-<h3>10. Check Whether a Number is Palindrome</h3>
-<a href="#q10">View Solution</a>
-
-<details id="q10">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>12. Enter the number from user if the user enter 1 then you will perform addition operation by entering 2 number from user add it and display answer. if user enter 2 then subtract or if user enter 3 then multiply or if user enter 4 then divide or if user enter 5 then modulo or if any other number then print invalid .if user want to quit the program then user will enter Q. ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int n, temp, rev = 0, rem;
+    int a,b,n;
+    char ch='Y';
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
-    temp = n;
-
-    while(n > 0)
+    while(ch!='Q' && ch!='q')
     {
-        rem = n % 10;
-        rev = rev * 10 + rem;
-        n = n / 10;
+        printf("1 Addition\n2 Subtraction\n3 Multiplication\n4 Division\n5 Modulo\n");
+        printf("Enter choice: ");
+        scanf("%d",&n);
+
+        if(n>=1 && n<=5)
+        {
+            printf("Enter two numbers: ");
+            scanf("%d%d",&a,&b);
+
+            if(n==1)
+                printf("%d\n",a+b);
+            else if(n==2)
+                printf("%d\n",a-b);
+            else if(n==3)
+                printf("%d\n",a*b);
+            else if(n==4 && b!=0)
+                printf("%d\n",a/b);
+            else if(n==5 && b!=0)
+                printf("%d\n",a%b);
+            else
+                printf("Cannot divide by zero\n");
+        }
+        else
+            printf("Invalid\n");
+
+        printf("Enter Q to quit: ");
+        scanf(" %c",&ch);
     }
 
-    if(temp == rev)
-        printf("Palindrome Number");
+    return 0;
+}
+</pre>
+Output: Enter choice and numbers. Enter Q to quit.
+</details>
+
+<h3>13. Enter the number from user and check its palindrome or not?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n,temp,rev=0;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    temp=n;
+
+    while(n>0)
+    {
+        rev=rev*10+n%10;
+        n=n/10;
+    }
+
+    if(temp==rev)
+        printf("Palindrome");
     else
         printf("Not Palindrome");
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-Enter a number: 121
-Palindrome Number
-</pre>
+Output: 121 = Palindrome
 </details>
 
-<hr>
-
-<h3>11. Print Even Numbers from 1 to 20</h3>
-<a href="#q11">View Solution</a>
-
-<details id="q11">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>14. Enter two numbers from users, one is base and second is power. Write the result ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int i;
+    int b,p,i=1,ans=1;
 
-    for(i = 1; i <= 20; i++)
+    printf("Enter base: ");
+    scanf("%d",&b);
+
+    printf("Enter power: ");
+    scanf("%d",&p);
+
+    while(i<=p)
     {
-        if(i % 2 == 0)
-            printf("%d ", i);
+        ans=ans*b;
+        i++;
+    }
+
+    printf("Answer = %d",ans);
+
+    return 0;
+}
+</pre>
+Output: 2 power 3 = 8
+</details>
+
+<h3>15. Enter a number from user and print first digit of number ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(n>=10)
+    {
+        n=n/10;
+    }
+
+    printf("First digit = %d",n);
+
+    return 0;
+}
+</pre>
+Output: 456 = 4
+</details>
+
+<h3>16. Enter a number from user and print total from 0 to that number ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n,i=0,sum=0;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(i<=n)
+    {
+        sum=sum+i;
+        i++;
+    }
+
+    printf("Total = %d",sum);
+
+    return 0;
+}
+</pre>
+Output: 5 = 15
+</details>
+
+<h3>17. Enter a number from user and find out factorial of that number ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n,i=1,fact=1;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(i<=n)
+    {
+        fact=fact*i;
+        i++;
+    }
+
+    printf("Factorial = %d",fact);
+
+    return 0;
+}
+</pre>
+Output: 5 = 120
+</details>
+
+<h3>18. Enter two numbers from user and print range from first number to second number ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int a,b;
+
+    printf("Enter first number: ");
+    scanf("%d",&a);
+
+    printf("Enter second number: ");
+    scanf("%d",&b);
+
+    while(a<=b)
+    {
+        printf("%d\n",a);
+        a++;
     }
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-2 4 6 8 10 12 14 16 18 20
-</pre>
+Output: 2 3 4 5 6
 </details>
 
-<hr>
-
-<h3>12. Print Fibonacci Series</h3>
-<a href="#q12">View Solution</a>
-
-<details id="q12">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>19. Enter password from user maximum 20 digits / character press enter key if you want to exit ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
+int main()
+{
+    char p[21];
+    int i=0;
+
+    printf("Enter password: ");
+    fgets(p,21,stdin);
+
+    while(p[i]!='\0' && p[i]!='\n')
+    {
+        printf("*");
+        i++;
+    }
+
+    if(i==0)
+        printf("Exit");
+
+    return 0;
+}
+</pre>
+Output: Enter abc123 = ******
+</details>
+
+<h3>20. Write a program to print the counting 1 to 100 with one second delay ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+#include <windows.h>
 
 int main()
 {
-    int a = 0, b = 1, c, i, n;
+    int i=1;
 
-    printf("Enter number of terms: ");
-    scanf("%d", &n);
-
-    for(i = 1; i <= n; i++)
+    while(i<=100)
     {
-        printf("%d ", a);
-
-        c = a + b;
-        a = b;
-        b = c;
+        printf("%d\n",i);
+        Sleep(1000);
+        i++;
     }
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-Enter number of terms: 7
-0 1 1 2 3 5 8
-</pre>
+Output: Counting 1 to 100 with delay.
 </details>
 
-<hr>
-
-<h3>13. Check Prime Number Using Loop</h3>
-<a href="#q13">View Solution</a>
-
-<details id="q13">
-<summary>Solution</summary>
-
-<h4>C Program</h4>
+<h3>21. Write a program to find out the Fibonacci series/ 1 to 100 (like 0 1 1 2 3 5 8 13 ……….) ?</h3>
+<details>
+<summary>View Solution</summary>
 <pre>
-#include &lt;stdio.h&gt;
-
+#include <stdio.h>
 int main()
 {
-    int n, i, count = 0;
+    int a=0,b=1,c;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
-    for(i = 1; i <= n; i++)
+    while(a<=100)
     {
-        if(n % i == 0)
-            count++;
+        printf("%d ",a);
+        c=a+b;
+        a=b;
+        b=c;
     }
 
-    if(n > 1 && count == 2)
-        printf("Prime Number");
+    return 0;
+}
+</pre>
+Output: 0 1 1 2 3 5 8 13 21 34 55 89
+</details>
+
+<h3>22. Enter a character from user and that character should be alphabet ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    char ch;
+
+    printf("Enter character: ");
+    scanf(" %c",&ch);
+
+    if((ch>='A' && ch<='Z') || (ch>='a' && ch<='z'))
+        printf("Alphabet");
     else
-        printf("Not Prime Number");
+        printf("Not Alphabet");
 
     return 0;
 }
 </pre>
-
-<h4>Output</h4>
-<pre>
-Enter a number: 7
-Prime Number
-</pre>
+Output: A = Alphabet
 </details>
 
-<hr>
+<h3>23. Check numbers from user is palindrome or not ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n,temp,rev=0;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    temp=n;
+
+    while(n>0)
+    {
+        rev=rev*10+n%10;
+        n=n/10;
+    }
+
+    if(temp==rev)
+        printf("Palindrome");
+    else
+        printf("Not Palindrome");
+
+    return 0;
+}
+</pre>
+Output: 121 = Palindrome
+</details>
+
+<h3>24. Enter a number from user and check it is Armstrong number or not ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n,temp,r,sum=0;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    temp=n;
+
+    while(n>0)
+    {
+        r=n%10;
+        sum=sum+r*r*r;
+        n=n/10;
+    }
+
+    if(temp==sum)
+        printf("Armstrong number");
+    else
+        printf("Not Armstrong number");
+
+    return 0;
+}
+</pre>
+Output: 153 = Armstrong number
+</details>
+
+<h3>25. Enter a number from user and check it is Armstrong number or not ?</h3>
+<details>
+<summary>View Solution</summary>
+<pre>
+#include <stdio.h>
+int main()
+{
+    int n,temp,r,sum=0;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    temp=n;
+
+    while(n>0)
+    {
+        r=n%10;
+        sum=sum+r*r*r;
+        n=n/10;
+    }
+
+    if(temp==sum)
+        printf("Armstrong number");
+    else
+        printf("Not Armstrong number");
+
+    return 0;
+}
+</pre>
+Output: 370 = Armstrong number
+</details>
+
+<br>
+<a href="index.html">Back to Home</a>
 
 </body>
 </html>

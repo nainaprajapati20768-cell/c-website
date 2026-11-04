@@ -1,193 +1,178 @@
+
+
 <html>
 <head>
     <title>Operators in C</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <h1>Operators in C Programming</h1>
-
 <hr>
 
-<h3>1. Pre-Increment Operator</h3>
+<h3>1. Write a program to show that example of pre-increment ?</h3>
 <a href="#q1">View Solution</a>
-
 <details id="q1">
 <summary>Solution</summary>
 <h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
     int a = 5;
 
-    printf("Before increment = %d\n", a);
-    printf("After increment = %d", ++a);
+    printf("%d", ++a);
 
     return 0;
 }
 </pre>
 <h4>Output</h4>
 <pre>
-Before increment = 5
-After increment = 6
+6
 </pre>
 </details>
-
 <hr>
 
-<h3>2. Post-Increment Operator</h3>
+<h3>2. Write a program to show that example of post-increment ?</h3>
 <a href="#q2">View Solution</a>
-
 <details id="q2">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
     int a = 5;
 
-    printf("Before increment = %d\n", a);
-    printf("Post increment = %d\n", a++);
-    printf("After increment = %d", a);
+    printf("%d\n", a++);
+    printf("%d", a);
 
     return 0;
 }
 </pre>
 <h4>Output</h4>
 <pre>
-Before increment = 5
-Post increment = 5
-After increment = 6
+5
+6
 </pre>
 </details>
-
 <hr>
 
-<h3>3. Pre-Decrement Operator</h3>
+<h3>3. Write a program to show that example of pre-decrement ?</h3>
 <a href="#q3">View Solution</a>
-
 <details id="q3">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
     int a = 5;
 
-    printf("Before decrement = %d\n", a);
-    printf("After decrement = %d", --a);
+    printf("%d", --a);
 
     return 0;
 }
 </pre>
 <h4>Output</h4>
 <pre>
-Before decrement = 5
-After decrement = 4
+4
 </pre>
 </details>
-
 <hr>
 
-<h3>4. Post-Decrement Operator</h3>
+<h3>4. Write a program to show that example of post-decrement ?</h3>
 <a href="#q4">View Solution</a>
-
 <details id="q4">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
     int a = 5;
 
-    printf("Before decrement = %d\n", a);
-    printf("Post decrement = %d\n", a--);
-    printf("After decrement = %d", a);
+    printf("%d\n", a--);
+    printf("%d", a);
 
     return 0;
 }
 </pre>
 <h4>Output</h4>
 <pre>
-Before decrement = 5
-Post decrement = 5
-After decrement = 4
+5
+4
 </pre>
 </details>
-
 <hr>
 
-<h3>5. Arithmetic Operations</h3>
+<h3>5. Write a program to enter 2 numbers from user add the number and show the answer, again take 2 number from user subtract the number display the answer, again take 2 number from user multiply the number display the answer and, again take 2 number from the user divide the number display the answer, again take 2 number find the remainder and display the answer ?</h3>
 <a href="#q5">View Solution</a>
-
 <details id="q5">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
     int a, b;
 
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-
+    printf("Enter two numbers for addition: ");
+    scanf("%d%d", &a, &b);
     printf("Addition = %d\n", a + b);
+
+    printf("Enter two numbers for subtraction: ");
+    scanf("%d%d", &a, &b);
     printf("Subtraction = %d\n", a - b);
+
+    printf("Enter two numbers for multiplication: ");
+    scanf("%d%d", &a, &b);
     printf("Multiplication = %d\n", a * b);
 
-    if (b != 0)
-    {
-        printf("Division = %.2f\n", (float)a / b);
-        printf("Modulo = %d", a % b);
-    }
-    else
-    {
-        printf("Division by zero is not possible.");
-    }
+    printf("Enter two numbers for division: ");
+    scanf("%d%d", &a, &b);
+    printf("Division = %d\n", a / b);
+
+    printf("Enter two numbers for remainder: ");
+    scanf("%d%d", &a, &b);
+    printf("Remainder = %d", a % b);
 
     return 0;
 }
 </pre>
 <h4>Output</h4>
 <pre>
-Enter two numbers: 17 5
-Addition = 22
-Subtraction = 12
-Multiplication = 85
-Division = 3.40
-Modulo = 2
+Enter two numbers for addition: 10 5
+Addition = 15
+Enter two numbers for subtraction: 10 5
+Subtraction = 5
+Enter two numbers for multiplication: 10 5
+Multiplication = 50
+Enter two numbers for division: 10 5
+Division = 2
+Enter two numbers for remainder: 10 3
+Remainder = 1
 </pre>
 </details>
-
 <hr>
 
-<h3>6. Find Last Digit of an Integer</h3>
+<h3>6. Write a program to enter a number from the user, the length of the number is depend on the user, programmer should print the last digit of number ?</h3>
 <a href="#q6">View Solution</a>
-
 <details id="q6">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    int num;
+    int a;
 
     printf("Enter a number: ");
-    scanf("%d", &num);
+    scanf("%d", &a);
 
-    printf("Last digit = %d", num % 10);
+    printf("Last digit = %d", a % 10);
 
     return 0;
 }
@@ -198,63 +183,53 @@ Enter a number: 12345
 Last digit = 5
 </pre>
 </details>
-
 <hr>
 
-<h3>7. Find Fractional Part of a Float Number</h3>
+<h3>7. Enter a decimal number from the user (float) and print the right hand side of the decimal point ?</h3>
 <a href="#q7">View Solution</a>
-
 <details id="q7">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    float num, fraction;
+    float a;
+    int b;
 
     printf("Enter a decimal number: ");
-    scanf("%f", &num);
+    scanf("%f", &a);
 
-    fraction = num - (int)num;
+    b = (int)(a * 100) % 100;
 
-    if (fraction < 0)
-        fraction = -fraction;
-
-    printf("Fractional part = %.2f", fraction);
+    printf("Right side = %d", b);
 
     return 0;
 }
 </pre>
 <h4>Output</h4>
 <pre>
-Enter a decimal number: 12.75
-Fractional part = 0.75
+Enter a decimal number: 12.45
+Right side = 45
 </pre>
 </details>
-
 <hr>
 
-<h3>8. Find Cube of a Number</h3>
+<h3>8. Write a program to enter a number from the user and find its cube.</h3>
 <a href="#q8">View Solution</a>
-
 <details id="q8">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    int num, cube;
+    int a;
 
     printf("Enter a number: ");
-    scanf("%d", &num);
+    scanf("%d", &a);
 
-    cube = num * num * num;
-
-    printf("Cube = %d", cube);
+    printf("Cube = %d", a * a * a);
 
     return 0;
 }
@@ -265,101 +240,86 @@ Enter a number: 3
 Cube = 27
 </pre>
 </details>
-
 <hr>
 
-<h3>9. Round Off a Float Number</h3>
+<h3>9. Write a program to enter a floating point number from the user and round it to the nearest integer.</h3>
 <a href="#q9">View Solution</a>
-
 <details id="q9">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    float num;
-    int result;
+    float a;
+    int b;
 
-    printf("Enter a decimal number: ");
-    scanf("%f", &num);
+    printf("Enter a number: ");
+    scanf("%f", &a);
 
-    if (num >= 0)
-        result = (int)(num + 0.5);
-    else
-        result = (int)(num - 0.5);
+    b = (int)(a + 0.5);
 
-    printf("Rounded number = %d", result);
+    printf("Rounded number = %d", b);
 
     return 0;
 }
 </pre>
 <h4>Output</h4>
 <pre>
-Enter a decimal number: 8.6
-Rounded number = 9
+Enter a number: 5.7
+Rounded number = 6
 </pre>
 </details>
-
 <hr>
 
-<h3>10. Convert Lowercase into Uppercase</h3>
+<h3>10. Write a program to convert a lowercase character into an uppercase character.</h3>
 <a href="#q10">View Solution</a>
-
 <details id="q10">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    char ch;
+    char a;
 
     printf("Enter a lowercase character: ");
-    scanf("%c", &ch);
+    scanf("%c", &a);
 
-    if (ch >= 'a' && ch <= 'z')
-    {
-        ch = ch - 32;
-    }
+    a = a - 32;
 
-    printf("Uppercase = %c", ch);
+    printf("Uppercase character = %c", a);
 
     return 0;
 }
 </pre>
 <h4>Output</h4>
 <pre>
-Enter a lowercase character: g
-Uppercase = G
+Enter a lowercase character: a
+Uppercase character = A
 </pre>
 </details>
-
 <hr>
 
-<h3>11. Calculate Total and Average of Five Subjects</h3>
+<h3>11. Write a program to enter marks of five subjects and calculate their average.</h3>
 <a href="#q11">View Solution</a>
-
 <details id="q11">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-    int a, b, c, d, e, total;
+    int a, b, c, d, e;
+    int sum;
     float average;
 
     printf("Enter marks of five subjects: ");
-    scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
+    scanf("%d%d%d%d%d", &a, &b, &c, &d, &e);
 
-    total = a + b + c + d + e;
-    average = total / 5.0;
+    sum = a + b + c + d + e;
+    average = sum / 5.0;
 
-    printf("Total = %d\n", total);
     printf("Average = %.2f", average);
 
     return 0;
@@ -367,29 +327,31 @@ int main()
 </pre>
 <h4>Output</h4>
 <pre>
-Enter marks of five subjects: 80 75 90 85 70
-Total = 400
+Enter marks of five subjects: 80 70 90 60 100
 Average = 80.00
 </pre>
 </details>
-
 <hr>
 
-<h3>12. Calculate Simple Interest</h3>
+<h3>12. Write a program to calculate simple interest using principal, rate and time entered by the user.</h3>
 <a href="#q12">View Solution</a>
-
 <details id="q12">
 <summary>Solution</summary>
-<h4>C Program</h4>
 <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
     float p, r, t, si;
 
-    printf("Enter principal, rate and time: ");
-    scanf("%f %f %f", &p, &r, &t);
+    printf("Enter principal: ");
+    scanf("%f", &p);
+
+    printf("Enter rate: ");
+    scanf("%f", &r);
+
+    printf("Enter time: ");
+    scanf("%f", &t);
 
     si = (p * r * t) / 100;
 
@@ -400,12 +362,16 @@ int main()
 </pre>
 <h4>Output</h4>
 <pre>
-Enter principal, rate and time: 5000 5 2
-Simple Interest = 500.00
+Enter principal: 1000
+Enter rate: 5
+Enter time: 2
+Simple Interest = 100.00
 </pre>
 </details>
 
 <hr>
+
+<a href="index.html">Back to Home</a>
 
 </body>
 </html>
